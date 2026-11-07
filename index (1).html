@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academic Writing Help – Internship &amp; Project Reports</title>
+<meta name="description" content="Tell me what you need written: internship reports, summer project reports, assignments and more. Share your deadline and documents, and I’ll reply on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F8FB;
+    --card:#FFFFFF;
+    --ink:#14213D;
+    --muted:#5B6678;
+    --line:#D9DFEA;
+    --brand:#2446C9;
+    --brand-dark:#1A348F;
+    --mark:#FFE45C;
+    --ok:#17794A;
+    --bad:#B3261E;
+    --radius:14px;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Bricolage Grotesque','Figtree',sans-serif;line-height:1.08;margin:0;letter-spacing:-.02em}
+  a{color:var(--brand)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  header.top{padding:18px 0}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.15rem;color:var(--ink);text-decoration:none}
+  .wa-link{font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);padding:8px 14px;border-radius:999px}
+  .wa-link:hover{background:var(--ink);color:#fff}
+
+  .hero{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;padding:28px 0 70px;align-items:start}
+  .intro h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800}
+  .intro h1 span{background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);padding:0 .08em}
+  .intro p.lead{margin:20px 0 26px;color:var(--muted);max-width:46ch}
+  .kinds{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 30px;padding:0;list-style:none}
+  .kinds button{font:inherit;font-size:.95rem;font-weight:500;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:border-color .15s,background .15s}
+  .kinds button:hover{border-color:var(--brand)}
+  .kinds button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+  .how{border-left:3px solid var(--mark);padding-left:18px;margin:0;color:var(--muted);font-size:.98rem}
+  .how b{color:var(--ink)}
+  .how ol{margin:8px 0 0;padding-left:18px}
+  .how li{margin:4px 0}
+
+  .panel{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:0 18px 40px -28px rgba(20,33,61,.35)}
+  .panel h2{font-size:1.6rem;margin-bottom:4px}
+  .panel .sub{margin:0 0 22px;color:var(--muted);font-size:.95rem}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .full{grid-column:1/-1}
+  label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+  label .opt{font-weight:400;color:var(--muted)}
+  input,select,textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;transition:border-color .15s,box-shadow .15s}
+  textarea{min-height:110px;resize:vertical}
+  input:focus,select:focus,textarea:focus,button:focus-visible,.drop:focus-visible{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(36,70,201,.2)}
+  .hint{font-size:.85rem;color:var(--muted);margin-top:5px}
+  .err{font-size:.85rem;color:var(--bad);margin-top:5px;display:none}
+  .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--bad)}
+  .field.invalid .err{display:block}
+  .internship{border-left:3px solid var(--mark);padding-left:16px;background:#FBFCFE}
+  .internship[hidden]{display:none}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  .drop{border:2px dashed var(--line);border-radius:12px;padding:22px;text-align:center;cursor:pointer;background:#FAFBFD;transition:border-color .15s,background .15s}
+  .drop.over,.drop:hover{border-color:var(--brand);background:#F0F4FF}
+  .drop strong{display:block}
+  .drop span{font-size:.88rem;color:var(--muted)}
+  #fileInput{display:none}
+  .files{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  .files li{display:flex;align-items:center;gap:10px;background:#F3F6FC;border-radius:9px;padding:8px 12px;font-size:.92rem}
+  .files .name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .files .size{color:var(--muted);font-size:.82rem}
+  .files button{border:0;background:none;color:var(--bad);font:inherit;font-weight:600;cursor:pointer}
+
+  .submit{width:100%;margin-top:22px;font:inherit;font-weight:700;font-size:1.05rem;color:#fff;background:var(--brand);border:0;border-radius:12px;padding:15px;cursor:pointer;transition:background .15s}
+  .submit:hover{background:var(--brand-dark)}
+  .submit:disabled{opacity:.65;cursor:wait}
+  .status{margin-top:14px;font-size:.95rem;min-height:1.4em}
+  .status.bad{color:var(--bad)}
+  .bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:10px;display:none}
+  .bar i{display:block;height:100%;width:0;background:var(--brand);transition:width .25s}
+
+  .done{display:none;text-align:left}
+  .done h2{font-size:1.8rem}
+  .ref{display:inline-block;background:var(--mark);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;padding:4px 12px;border-radius:8px;margin:12px 0}
+  .done .btn{display:inline-block;margin-top:14px;background:#1FA855;color:#fff;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:12px}
+  .done .again{display:block;margin-top:16px;background:none;border:0;color:var(--brand);font:inherit;font-weight:600;cursor:pointer;padding:0}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem}
+
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr;gap:34px}
+    .panel{padding:22px}
+  }
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">YOUR NAME</a>
+    <a class="wa-link" id="waTop" href="#" target="_blank" rel="noopener" hidden>Chat on WhatsApp</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="intro">
+      <h1>Your report, written <span>on time</span>.</h1>
+      <p class="lead">Internship reports, summer project reports, assignments and more. Tell me what you need, add your deadline and any documents, and I’ll reply on WhatsApp with a quote.</p>
+
+      <ul class="kinds" id="kinds" aria-label="Pick a type of work">
+        <li><button type="button" aria-pressed="false">Internship report</button></li>
+        <li><button type="button" aria-pressed="false">Summer project report</button></li>
+        <li><button type="button" aria-pressed="false">Assignment</button></li>
+        <li><button type="button" aria-pressed="false">Research paper</button></li>
+        <li><button type="button" aria-pressed="false">Thesis / dissertation</button></li>
+        <li><button type="button" aria-pressed="false">Case study</button></li>
+        <li><button type="button" aria-pressed="false">Presentation</button></li>
+      </ul>
+
+      <div class="how">
+        <b>How it works</b>
+        <ol>
+          <li>Fill in the form with your topic and deadline.</li>
+          <li>I check the details and message you on WhatsApp.</li>
+          <li>We agree on price, then I start writing.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel" id="order">
+      <form id="orderForm" novalidate>
+        <h2>Tell me what you need</h2>
+        <p class="sub">Fields marked with * are required.</p>
+
+        <div class="grid">
+          <div class="field">
+            <label for="client_name">Your name *</label>
+            <input id="client_name" name="client_name" autocomplete="name" maxlength="120">
+            <div class="err">Enter your name.</div>
+          </div>
+
+          <div class="field">
+            <label for="whatsapp">WhatsApp number *</label>
+            <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+977 98XXXXXXXX" maxlength="25">
+            <div class="err">Enter a valid number with country code.</div>
+          </div>
+
+          <div class="field full">
+            <label for="email">Email <span class="opt">(optional)</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="160">
+            <div class="err">Enter a valid email address.</div>
+          </div>
+
+          <div class="field">
+            <label for="work_type">Type of work *</label>
+            <select id="work_type" name="work_type">
+              <option value="">Select…</option>
+              <option>Internship report</option>
+              <option>Summer project report</option>
+              <option>Assignment</option>
+              <option>Research paper</option>
+              <option>Thesis / dissertation</option>
+              <option>Case study</option>
+              <option>Presentation</option>
+              <option>Other</option>
+            </select>
+            <div class="err">Choose the type of work.</div>
+          </div>
+
+          <div class="field">
+            <label for="deadline">Deadline *</label>
+            <input id="deadline" name="deadline" type="date">
+            <div class="err">Pick a deadline that is today or later.</div>
+          </div>
+
+          <div class="full internship" id="internshipBox" hidden>
+            <div class="grid">
+              <div class="field full">
+                <label for="company_name">Company / organization name *</label>
+                <input id="company_name" name="company_name" maxlength="200" autocomplete="organization">
+                <div class="err">Enter the company name.</div>
+              </div>
+              <div class="field full">
+                <label for="company_address">Company address *</label>
+                <input id="company_address" name="company_address" maxlength="300" autocomplete="off" placeholder="Street, city, country">
+                <div class="err">Enter the company address.</div>
+              </div>
+              <div class="field full">
+                <label for="department">Department where you worked *</label>
+                <input id="department" name="department" maxlength="150" placeholder="e.g. Accounts, IT, Marketing">
+                <div class="err">Enter your department.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="title">Title of the work *</label>
+            <input id="title" name="title" maxlength="250" placeholder="e.g. Internship report at ABC Bank">
+            <div class="err">Enter a title. If you don’t have one, write a working title.</div>
+          </div>
+
+          <div class="field">
+            <label for="topic">Topic / subject area *</label>
+            <input id="topic" name="topic" maxlength="250" placeholder="e.g. Banking operations, Marketing">
+            <div class="err">Enter the topic or subject.</div>
+          </div>
+
+          <div class="field">
+            <label for="pages">Length <span class="opt">(optional)</span></label>
+            <input id="pages" name="pages" maxlength="60" placeholder="e.g. 40 pages or 8000 words">
+          </div>
+
+          <div class="field full">
+            <label for="details">Other instructions <span class="opt">(optional)</span></label>
+            <textarea id="details" name="details" maxlength="4000" placeholder="Citation style, university guidelines, chapters needed, anything that matters."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="fileInput">Supporting documents <span class="opt">(optional)</span></label>
+            <div class="drop" id="drop" tabindex="0" role="button" aria-label="Add files">
+              <strong>Drop files here or tap to choose</strong>
+              <span>Templates, reference works, frameworks, guidelines. Any format, up to 50 MB each.</span>
+            </div>
+            <input id="fileInput" type="file" multiple>
+            <ul class="files" id="fileList"></ul>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <button class="submit" id="submitBtn" type="submit">Send my request</button>
+        <div class="bar" id="bar"><i id="barFill"></i></div>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="done" id="done">
+        <h2>Request received</h2>
+        <p>Thank you, <span id="doneName"></span>. I’ll review the details and message you on WhatsApp soon.</p>
+        <div class="ref" id="doneRef"></div>
+        <div><a class="btn" id="doneWa" href="#" target="_blank" rel="noopener" hidden>Message me on WhatsApp</a></div>
+        <button class="again" id="again" type="button">Send another request</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Your documents are used only to complete your work and are not shared.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* ============ SETTINGS: edit these ============ */
+const SUPABASE_URL = "https://jbskwnmzpptsanfbjrem.supabase.co";
+// Use the PUBLISHABLE (anon) key from Supabase → Project Settings → API Keys.
+// It starts with "sb_publishable_" (or "eyJ..." on older projects). NEVER put the secret key here.
+const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+// Your WhatsApp number with country code, digits only (e.g. 9779812345678). Leave "" to hide WhatsApp buttons.
+const OWNER_WHATSAPP = "";
+const BUCKET = "order-files";
+const MAX_FILE_MB = 50;
+const MAX_FILES = 15;
+/* ============================================== */
+
+const $ = id => document.getElementById(id);
+let sb = null;
+try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY); } catch (e) { console.error(e); }
+
+let files = [];
+
+/* WhatsApp links */
+if (OWNER_WHATSAPP) {
+  const link = "https://wa.me/" + OWNER_WHATSAPP;
+  $("waTop").href = link; $("waTop").hidden = false;
+}
+
+/* Deadline: today or later */
+const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+$("deadline").min = today.toISOString().slice(0, 10);
+
+/* Type-of-work chips fill the select */
+const chips = [...document.querySelectorAll("#kinds button")];
+chips.forEach(b => b.addEventListener("click", () => {
+  $("work_type").value = b.textContent;
+  syncChips();
+  $("order").scrollIntoView({ behavior: "smooth", block: "start" });
+  $("client_name").focus({ preventScroll: true });
+}));
+$("work_type").addEventListener("change", syncChips);
+function syncChips() {
+  chips.forEach(b => b.setAttribute("aria-pressed", String(b.textContent === $("work_type").value)));
+  $("internshipBox").hidden = !isInternship();
+}
+function isInternship() { return $("work_type").value === "Internship report"; }
+
+/* Files */
+const drop = $("drop"), input = $("fileInput");
+drop.addEventListener("click", () => input.click());
+drop.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); } });
+["dragenter", "dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", e => addFiles(e.dataTransfer.files));
+input.addEventListener("change", () => { addFiles(input.files); input.value = ""; });
+
+function addFiles(list) {
+  const problems = [];
+  for (const f of list) {
+    if (f.size > MAX_FILE_MB * 1024 * 1024) { problems.push(`${f.name} is larger than ${MAX_FILE_MB} MB.`); continue; }
+    if (files.length >= MAX_FILES) { problems.push(`You can add up to ${MAX_FILES} files.`); break; }
+    if (!files.some(x => x.name === f.name && x.size === f.size)) files.push(f);
+  }
+  renderFiles();
+  setStatus(problems.join(" "), !!problems.length);
+}
+function renderFiles() {
+  const ul = $("fileList"); ul.innerHTML = "";
+  files.forEach((f, i) => {
+    const li = document.createElement("li");
+    const n = document.createElement("span"); n.className = "name"; n.textContent = f.name;
+    const s = document.createElement("span"); s.className = "size"; s.textContent = fmt(f.size);
+    const r = document.createElement("button"); r.type = "button"; r.textContent = "Remove"; r.setAttribute("aria-label", "Remove " + f.name);
+    r.onclick = () => { files.splice(i, 1); renderFiles(); };
+    li.append(n, s, r); ul.append(li);
+  });
+}
+const fmt = b => b < 1024 * 1024 ? Math.max(1, Math.round(b / 1024)) + " KB" : (b / 1024 / 1024).toFixed(1) + " MB";
+function setStatus(msg, bad) { const s = $("status"); s.textContent = msg || ""; s.className = "status" + (bad ? " bad" : ""); }
+
+/* Validation */
+function mark(id, ok) { $(id).closest(".field").classList.toggle("invalid", !ok); return ok; }
+function validate() {
+  const v = id => $(id).value.trim();
+  const digits = v("whatsapp").replace(/[^\d]/g, "");
+  const results = [
+    mark("client_name", v("client_name").length >= 2),
+    mark("whatsapp", /^\+?[\d\s\-()]+$/.test(v("whatsapp")) && digits.length >= 8 && digits.length <= 15),
+    mark("email", !v("email") || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"))),
+    mark("work_type", !!v("work_type")),
+    mark("deadline", !!v("deadline") && v("deadline") >= $("deadline").min),
+    mark("title", v("title").length >= 3),
+    mark("topic", v("topic").length >= 2),
+    ...(isInternship() ? [
+      mark("company_name", v("company_name").length >= 2),
+      mark("company_address", v("company_address").length >= 3),
+      mark("department", v("department").length >= 2)
+    ] : [])
+  ];
+  const firstBad = document.querySelector(".field.invalid input, .field.invalid select");
+  if (firstBad) firstBad.focus();
+  return results.every(Boolean);
+}
+document.querySelectorAll("input,select,textarea").forEach(el => el.addEventListener("input", () => el.closest(".field")?.classList.remove("invalid")));
+
+/* Submit */
+$("orderForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if ($("website").value) return;                 // honeypot: bots fill this
+  if (!validate()) { setStatus("Please fix the highlighted fields.", true); return; }
+  if (!sb || SUPABASE_PUBLISHABLE_KEY.startsWith("PASTE")) { setStatus("The site is not connected yet. Add the publishable key in index.html.", true); return; }
+
+  const btn = $("submitBtn"); btn.disabled = true; setStatus("");
+  const id = crypto.randomUUID();
+  const bar = $("bar"), fill = $("barFill");
+  const uploaded = [];
+
+  try {
+    if (files.length) {
+      bar.style.display = "block"; fill.style.width = "0";
+      for (let i = 0; i < files.length; i++) {
+        const f = files[i];
+        setStatus(`Uploading file ${i + 1} of ${files.length}…`);
+        const safe = f.name.normalize("NFKD").replace(/[^\w.\-]+/g, "_").slice(-120);
+        const path = `${id}/${i + 1}_${safe}`;
+        const { error } = await sb.storage.from(BUCKET).upload(path, f, { contentType: f.type || "application/octet-stream", upsert: false });
+        if (error) throw new Error(`Could not upload “${f.name}”: ${error.message}`);
+        uploaded.push({ name: f.name, path, size: f.size, type: f.type });
+        fill.style.width = Math.round(((i + 1) / files.length) * 100) + "%";
+      }
+    }
+
+    setStatus("Sending your request…");
+    const v = k => $(k).value.trim();
+    const row = {
+      id,
+      client_name: v("client_name"),
+      whatsapp: v("whatsapp"),
+      email: v("email") || null,
+      work_type: v("work_type"),
+      title: v("title"),
+      topic: v("topic"),
+      pages: v("pages") || null,
+      deadline: v("deadline"),
+      details: v("details") || null,
+      files: uploaded
+    };
+    if (isInternship()) {
+      row.company_name = v("company_name");
+      row.company_address = v("company_address");
+      row.department = v("department");
+    }
+    const { error } = await sb.from("orders").insert(row);   // insert-only; no read-back
+    if (error) throw new Error(error.message);
+
+    $("orderForm").style.display = "none";
+    $("doneName").textContent = row.client_name.split(" ")[0];
+    $("doneRef").textContent = "Reference: " + id.slice(0, 8).toUpperCase();
+    if (OWNER_WHATSAPP) {
+      const msg = `Hi, I just sent a request on your website. Reference ${id.slice(0, 8).toUpperCase()} – ${row.work_type}: ${row.title}.`;
+      $("doneWa").href = "https://wa.me/" + OWNER_WHATSAPP + "?text=" + encodeURIComponent(msg);
+      $("doneWa").hidden = false;
+    }
+    $("done").style.display = "block";
+    $("order").scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (err) {
+    console.error(err);
+    setStatus((err.message || "Something went wrong.") + " Your details are still here, so you can try again.", true);
+  } finally {
+    btn.disabled = false; bar.style.display = "none";
+  }
+});
+
+$("again").addEventListener("click", () => {
+  $("orderForm").reset(); files = []; renderFiles(); syncChips(); setStatus("");
+  $("done").style.display = "none"; $("orderForm").style.display = "block";
+});
+</script>
+</body>
+</html>
