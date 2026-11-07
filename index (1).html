@@ -109,7 +109,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#">YOUR NAME</a>
+    <a class="brand" href="#">NEPTA</a>
     <a class="wa-link" id="waTop" href="#" target="_blank" rel="noopener" hidden>Chat on WhatsApp</a>
   </div>
 </header>
@@ -372,7 +372,7 @@ $("orderForm").addEventListener("submit", async e => {
   e.preventDefault();
   if ($("website").value) return;                 // honeypot: bots fill this
   if (!validate()) { setStatus("Please fix the highlighted fields.", true); return; }
-  if (!sb || SUPABASE_PUBLISHABLE_KEY.startsWith("PASTE")) { setStatus("The site is not connected yet. Add the publishable key in index.html.", true); return; }
+  if (!sb || SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_O_zmkBPrpVlI2x0oUrK4xw_9rgRMNp7")) { setStatus("The site is not connected yet. Add the publishable key in index.html.", true); return; }
 
   const btn = $("submitBtn"); btn.disabled = true; setStatus("");
   const id = crypto.randomUUID();
@@ -422,7 +422,7 @@ $("orderForm").addEventListener("submit", async e => {
     $("doneRef").textContent = "Reference: " + id.slice(0, 8).toUpperCase();
     if (OWNER_WHATSAPP) {
       const msg = `Hi, I just sent a request on your website. Reference ${id.slice(0, 8).toUpperCase()} – ${row.work_type}: ${row.title}.`;
-      $("doneWa").href = "https://wa.me/" + OWNER_WHATSAPP + "?text=" + encodeURIComponent(msg);
+      $("doneWa").href = "https://wa.me/" + 9779815326085 + "?text=" + encodeURIComponent(msg);
       $("doneWa").hidden = false;
     }
     $("done").style.display = "block";
